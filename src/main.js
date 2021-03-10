@@ -7,6 +7,11 @@ Vue.config.productionTip = false
 
 import 'lib-flexible/flexible.js'
 
+// 调用Element
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
+
 new Vue({
   router,
   store,

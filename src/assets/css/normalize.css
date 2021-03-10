@@ -291,6 +291,22 @@ textarea {
   /* 2 */
 }
 
+[type="button"] {
+  cursor: pointer;
+}
+
+/* 去掉输入框type为number时的上下箭头 */
+/*谷歌*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/*火狐*/
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */

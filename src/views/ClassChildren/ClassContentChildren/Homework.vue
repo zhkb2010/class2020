@@ -1,6 +1,9 @@
 <!-- 作业 -->
 <template>
-  <div class="">Homework</div>
+  <div class="">
+    <div>111</div>
+    <div class="aaa"><input type="radio" name="类型" id="type2" />类型</div>
+  </div>
 </template>
 
 <script>
@@ -13,4 +16,7 @@ export default {
 };
 </script>
 <style scoped>
+.aaa {
+  border: 1px solid red;
+}
 </style>

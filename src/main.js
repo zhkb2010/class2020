@@ -5,7 +5,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
-import 'lib-flexible/flexible.js'
+// 字体自适应
+import "./common/rem"
 
 // 调用Element
 import ElementUI from 'element-ui';

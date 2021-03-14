@@ -39,25 +39,25 @@ export default {
 </script>
 <style scoped>
 .class-content-top {
-  height: 1.194444rem;
+  height: 230px;
   color: #fff;
   background: url("~assets/img/Class/背景.png") no-repeat;
   background-size: 100% 100%;
-  border-radius: 0.041667rem 0.041667rem 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .name {
-  padding-top: 0.291667rem;
-  margin-left: 0.194444rem;
-  font-size: 0.177083rem;
+  padding-top: 45px;
+  margin-left: 40px;
+  font-size: 34px;
 }
 
 .title {
   display: flex;
   justify-content: space-between;
-  font-size: 0.072917rem;
-  height: 0.319444rem;
-  margin: 0.069444rem 0.194444rem 0 0.194444rem;
+  font-size: 14px;
+  height: 80px;
+  margin: 12px 30px 0 40px;
 }
 .top-left {
   display: flex;
@@ -70,28 +70,28 @@ export default {
 }
 .top-left ul li {
   background-color: hsla(0, 0%, 100%, 0.2);
-  height: 0.166667rem;
-  line-height: 0.166667rem;
-  margin-right: 0.076389rem;
-  padding: 0 0.041667rem 0 0.041667rem;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 15px;
+  padding: 0 8px;
 }
 
 .top-left ul li:nth-child(1)::before {
   content: "\e951";
   font-family: "iconfont";
-  margin-right: 0.027778rem;
+  margin-right: 6px;
 }
 
 .top-left ul li:nth-child(2)::before {
   content: "\e7b0";
   font-family: "iconfont";
-  margin-right: 0.027778rem;
+  margin-right: 6px;
 }
 
 .top-left ul li:nth-child(2)::after {
   content: "\e900";
-  font-family: "icomoon";
-  margin-left: 0.027778rem;
+  font-family: "icomoon1";
+  margin-left: 4px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -99,37 +99,39 @@ export default {
 .top-left ul li:nth-child(3)::before {
   content: "\e619";
   font-family: "iconfont";
-  margin-right: 0.027778rem;
+  margin-right: 6px;
 }
 
 .top-left ul li:nth-child(4)::before {
   content: "\e633";
   font-family: "iconfont";
-  margin-right: 0.027778rem;
+  margin-right: 6px;
 }
 .top-left ul li:nth-child(5)::before {
   content: "\e61a";
   font-family: "iconfont";
-  margin-right: 0.027778rem;
+  margin-right: 6px;
 }
 .top-right {
   display: flex;
+  align-items: center;
 }
 
 .top-right .count {
-  font-size: 0.15625rem;
-  padding-bottom: 0.020833rem;
+  font-size: 30px;
+  padding: 2px 0 8px 0;
 }
 
 .top-right > div {
-  width: 0.416667rem;
+  height: 65px;
+  width: 80px;
   text-align: center;
 }
 
 .top-right > div:last-child {
-  width: 0.277778rem;
-  margin: 0 0.069444rem 0 0.069444rem;
-  border-radius: 0.020833rem;
+  width: 50px;
+  margin: 0 20px 0 20px;
+  border-radius: 3px;
   background-color: #f8e516;
   color: #333;
 }
@@ -138,7 +140,7 @@ export default {
   display: block;
   content: "\e7b7";
   font-family: "iconfont";
-  font-size: 0.15625rem;
-  padding-bottom: 0.020833rem;
+  font-size: 30px;
+  padding: 5px 0;
 }
 </style>

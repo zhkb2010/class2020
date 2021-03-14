@@ -32,12 +32,12 @@ export default {
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  height: 0.381944rem;
-  line-height: 0.381944rem;
+  height: 72px;
+  line-height: 72px;
   background-color: #27292d;
-  font-size: 0.097222rem;
+  font-size: 20px;
   color: #ffffff;
-  padding: 0 0.416667rem 0 0.208333rem;
+  padding: 0 60px 0 30px;
 }
 
 .nav-bar-left {
@@ -46,31 +46,31 @@ export default {
 
 .nav-bar-left::before {
   content: "\e901";
-  font-family: "icomoon";
+  font-family: "icomoon1";
   display: inline-block;
   vertical-align: top;
-  margin-right: 0.034722rem;
+  margin-right: 5px;
 }
 
 .nav-bar-right::before {
   content: "\e904";
-  font-family: "icomoon";
+  font-family: "icomoon1";
   display: inline-block;
   vertical-align: top;
-  font-size: 0.125rem;
+  font-size: 20px;
 }
 
 .nav-bar-right .circle {
   display: inline-block;
-  height: 0.111111rem;
-  width: 0.111111rem;
+  height: 22px;
+  width: 22px;
   background-color: #c0c4cc;
-  border-radius: 0.055556rem;
+  border-radius: 50%;
   vertical-align: text-top;
-  margin: 0 0.034722rem 0 0.138889rem;
+  margin: 0 5px 0 20px;
 }
 
 .nav-tab {
-  height: 0.381944rem;
+  height: 74px;
 }
 </style>

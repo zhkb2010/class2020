@@ -27,29 +27,34 @@ export default {
 };
 </script>
 <style scoped>
+::v-deep input::placeholder {
+  font-size: 14px;
+}
+
 .class-content {
-  width: 6.25rem;
+  width: 1200px;
   margin: 0 auto;
 }
 
 .tab-control {
-  height: 0.277778rem;
-  line-height: 0.277778rem;
+  height: 54px;
+  line-height: 54px;
+  font-size: 16px;
   background-color: #f5f5f5;
 }
 
 .tab-control > a {
   display: inline-block;
   color: #333;
-  height: 0.277778rem;
-  margin: 0 0.180556rem 0 0.180556rem;
+  height: 54px;
+  margin: 0 34.5px;
 }
 
 .tab-control > a:first-child {
-  margin-left: 0.333333rem;
+  margin-left: 65px;
 }
 
 .router-link-active {
-  border-bottom: 0.013889rem solid #f4de21;
+  border-bottom: 2px solid #f4de21;
 }
 </style>

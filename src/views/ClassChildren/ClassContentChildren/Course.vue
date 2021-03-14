@@ -27,7 +27,7 @@
     >
       <table v-for="(item, num) in taArr" :key="num">
         <tr>
-          <td colspan="4">
+          <td colspan="5">
             <input
               type="text"
               placeholder="请输入章节名称"
@@ -75,12 +75,20 @@
               type="button"
               value="+"
               class="addknow"
-              @click="trclick(num, index)"
+              @click="tr_addclick(num, index)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              value="-"
+              class="delknow"
+              @click="tr_delclick(num, index)"
             />
           </td>
         </tr>
         <tr>
-          <td colspan="4">
+          <td colspan="5">
             <div>（编辑完成后，敲击“回车键”可继续添加知识点)</div>
           </td>
         </tr>
@@ -90,6 +98,7 @@
         <input type="button" value="继续添加" @click="taclick()" />
       </div>
     </form>
+    <!-- form表单提交，页面不跳转 -->
     <iframe id="myIframe" name="hideIframe" style="display: none"></iframe>
     <!-- 章节内容 -->
     <ul class="ccontent" :class="{ cshow: cisActive }">
@@ -143,7 +152,7 @@ export default {
     // 课程号弹出框
     copen() {
       this.$confirm(
-        <div style="margin-top: 23px; margin-bottom: 33px">
+        <div style="margin-top: 28px; margin-bottom: 40px;font-size:16px">
           请先输入"<span style="color:#f3cf0a;">课程号</span>
           "再添加课程大纲
         </div>,
@@ -181,9 +190,12 @@ export default {
       }
     },
     // 鼠标按"+"添加知识点
-    trclick(num, index) {
-      // console.log(this.trArr[num]);
+    tr_addclick(num, index) {
       this.trArr[num].splice(index + 1, 0, {});
+    },
+    // 鼠标按"-"删除知识点
+    tr_delclick(num, index) {
+      this.trArr[num].splice(index, 1);
     },
     // 鼠标点击"继续添加"
     taclick() {
@@ -228,48 +240,50 @@ export default {
 <style scoped>
 .course {
   line-height: 1.5;
-  height: 600px;
+  height: 1000px;
 }
 
 /* 课程号 */
 .password {
-  margin: 0.083333rem 0 0.138889rem 0;
-  height: 0.381944rem;
+  margin: 18px 0 28px 0;
+  height: 70px;
 }
 
 .password input[type="number"] {
-  margin-top: 0.027778rem;
+  margin-top: 10px;
   width: 100%;
-  height: 0.208333rem;
-  text-indent: 0.069444rem;
-  border: 0.006944rem solid #e8e8e8;
+  height: 42px;
+  text-indent: 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
 }
 
 .password input[type="submit"] {
   float: right;
-  margin-top: 0.055556rem;
-  height: 0.194444rem;
-  width: 0.541667rem;
+  margin-top: 10px;
+  height: 36px;
+  width: 105px;
   background-color: #f4de21;
   border: none;
-  border-radius: 0.020833rem;
+  border-radius: 3px;
   cursor: pointer;
 }
 
 /* 课程大纲 */
 .course-know {
-  height: 0.388889rem;
+  height: 76px;
 }
 
 .course-know button {
   text-align: left;
-  margin-top: 0.041667rem;
+  margin-top: 10px;
   background-color: #fff;
   border: none;
-  height: 0.208333rem;
+  border-radius: 3px;
+  height: 42px;
   width: 100%;
-  text-indent: 0.069444rem;
-  box-shadow: 0 0.013889rem 0.020833rem 0.013889rem rgb(0 0 0 / 10%);
+  text-indent: 20px;
+  box-shadow: 0 2px 2px 2px rgb(0 0 0 / 10%);
 }
 
 .course-know button:hover {
@@ -279,7 +293,8 @@ export default {
   content: "\e602";
   font-family: "iconfont";
   color: #333;
-  padding-right: 0.034722rem;
+  font-weight: 700;
+  padding-right: 8px;
 }
 
 /* 添加章节及知识点 */
@@ -288,82 +303,87 @@ export default {
 }
 
 .add {
-  border: 0.006944rem solid #e8e8e8;
-  border-radius: 0.034722rem;
-  margin-top: 0.083333rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  margin-top: 15px;
   width: 100%;
 }
 
 .add table {
-  margin: 0.138889rem 0 0 0.118056rem;
-  width: 5.972222rem;
+  margin: 30px 0 0 25px;
+  width: 1148px;
 }
 
 .name {
   width: 100%;
-  height: 0.208333rem;
-  text-indent: 0.055556rem;
-  border: 0.006944rem solid #e8e8e8;
-  margin-bottom: 0.118056rem;
+  height: 42px;
+  text-indent: 10px;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 22px;
 }
 
 .add-know {
   display: block;
-  margin-bottom: 0.069444rem;
+  margin-bottom: 10px;
 }
 .content {
-  width: 4.270833rem;
-  height: 0.208333rem;
-  text-indent: 0.055556rem;
-  border: 0.006944rem dashed #e4e2e2;
+  width: 784px;
+  height: 42px;
+  text-indent: 10px;
+  border: 1px dashed #e4e2e2;
 }
 
 .radio {
-  width: 2.083333rem;
+  height: 42px;
+  width: 270px;
+  font-size: 12px;
   text-align: center;
   background-color: #f5f5f5;
-  border: 0.006944rem dashed #e4e2e2;
+  border: 1px dashed #e4e2e2;
 }
 .radio input {
   vertical-align: text-top;
-  margin-right: 0.020833rem;
-  margin-left: 0.083333rem;
+  margin-right: 6px;
+  margin-left: 14px;
 }
 
 .space {
-  width: 0.055556rem;
+  width: 10px;
 }
-.addknow {
+.addknow,
+.delknow {
   font-family: "iconfont";
-  font-size: 0.138889rem;
-  width: 0.208333rem;
-  height: 0.208333rem;
-  border: 0.006944rem dashed #e4e2e2;
+  font-size: 26px;
+  width: 42px;
+  height: 42px;
+  border: 1px dashed #e4e2e2;
   background-color: #fff;
 }
 
-.addknow:hover {
+.addknow:hover,
+.delknow:hover {
   background-color: #f4de21;
 }
 .add table div {
-  padding-bottom: 0.083333rem;
-  font-size: 0.0625rem;
+  padding-bottom: 16px;
+  font-size: 12px;
 }
 
 .last {
   text-align: right;
-  border-top: 0.006944rem solid #e8e8e8;
-  height: 0.347222rem;
-  line-height: 0.347222rem;
+  border-top: 2px solid #e8e8e8;
+  height: 70px;
+  line-height: 70px;
   background-color: #f0f0f0;
 }
 .last input {
-  height: 0.1875rem;
-  width: 0.527778rem;
+  height: 36px;
+  width: 102px;
   cursor: pointer;
-  margin-right: 0.208333rem;
+  font-size: 14px;
+  margin-right: 32px;
   border: none;
-  border-radius: 0.020833rem;
+  border-radius: 5px;
 }
 
 .last input:first-child {
@@ -379,55 +399,57 @@ export default {
 }
 
 .ccontent {
-  margin-top: 0.083333rem;
+  margin-top: 15px;
 }
 
 .ccontent li {
-  border-bottom: 0.006944rem solid #e8e8e8;
+  border-bottom: 2px solid #e8e8e8;
 }
 
 .ccontent li:first-child {
-  border-top: 0.006944rem solid #e8e8e8;
+  border-top: 2px solid #e8e8e8;
 }
 
 .ccontent li h4 {
   color: #111111;
-  font-size: 0.104167rem;
+  font-size: 20px;
   font-weight: normal;
-  margin: 0.138889rem 0 0.069444rem 0;
+  margin: 28px 0 16px 0;
 }
 
 .ccontent .knowitem {
   display: flex;
-  margin-left: 0.090278rem;
+  font-size: 14px;
+  margin-left: 15px;
 }
 
 .ccontent .knowitem div:first-child {
-  width: 0.333333rem;
+  width: 65px;
 }
 
 .edit {
   display: flex;
   justify-content: flex-end;
-  font-family: "icomoon";
-  height: 0.159722rem;
-  line-height: 0.159722rem;
-  margin-right: 0.125rem;
+  font-family: "icomoon1";
+  font-size: 18px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 26px;
   cursor: pointer;
 }
 
 ::v-deep.el-dropdown-menu {
-  height: 0.430556rem;
-  width: 0.430556rem;
-  padding: 0.041667rem 0 0.041667rem 0;
+  height: 80px;
+  width: 84px;
+  padding: 10px 0;
   margin: 0;
 }
 ::v-deep.el-dropdown-menu__item {
   padding: 0;
   text-align: center;
-  height: 0.173611rem;
-  line-height: 0.173611rem;
-  font-size: 0.072917rem;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
 }
 ::v-deep.el-popper .popper__arrow::after {
   content: none;
@@ -436,23 +458,25 @@ export default {
 <style>
 /* 课程号 el-button弹框样式 */
 .ccustomClass {
-  width: 310px;
-  height: 212px;
+  width: 415px;
+  height: 285px;
   padding: 0 !important;
 }
 
 .ccancelButton {
-  width: 77px;
-  height: 32px;
+  width: 102px;
+  height: 42px;
+  font-size: 18px;
   color: #fff;
   background-color: #333 !important;
   border: none !important;
 }
 
 .cconfirmButton {
-  width: 77px;
-  height: 32px;
-  margin-left: 38px !important;
+  width: 102px;
+  height: 42px;
+  font-size: 18px;
+  margin-left: 52px !important;
   color: #333 !important;
   background-color: #f4de21 !important;
   border: none !important;
